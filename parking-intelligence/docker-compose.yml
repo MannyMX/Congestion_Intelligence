@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./scripts:/app/scripts
+      - ./tests:/app/tests
+    environment:
+      - DUCKDB_PATH=/app/data/processed/parking_intelligence.duckdb
+    depends_on: []
+    # NOTE: Embedded DuckDB used for Stage 1.
+    # Stage 2 will require Postgres+PostGIS for live concurrent writes.
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend

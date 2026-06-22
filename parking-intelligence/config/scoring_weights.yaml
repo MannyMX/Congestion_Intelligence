@@ -1,0 +1,4 @@
+w_heavy: 0.25
+w_road_class: 0.2
+w_time_conc: 0.15
+w_volume: 0.4
