@@ -30,7 +30,7 @@ For scaffolding and local testing, the `backend.Dockerfile` explicitly installs 
    ```
 3. **Load historical data:**
    ```bash
-   python scripts/load_historical_data.py
+    python -m scripts.load_historical_data
    ```
    This reads the CSV, cleans the data, runs the clustering and scoring algorithms, and persists the results into a DuckDB database (`data/processed/parking_intelligence.duckdb`).
 4. **Start the application:**
