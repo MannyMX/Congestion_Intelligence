@@ -4,26 +4,26 @@ uvicorn==0.24.0.post1
 python-multipart==0.0.6
 
 # Data Processing & Math
-pandas==2.1.3
+pandas
 numpy
 
 # Machine Learning (DBSCAN only)
-scikit-learn==1.3.2
+scikit-learn
 
 # Spatial & Geometry
-shapely==2.0.2
+shapely
 # pyogrio ensures GDAL is bundled in a manylinux wheel, 
 # making geopandas safe to install without system dependencies.
-pyogrio==0.7.2
-geopandas==0.14.1
+pyogrio
+geopandas
 
 # Database
-duckdb==1.0.0
+duckdb
 
 # Utilities
-pyyaml==6.0.1
-pydantic==2.5.2
+pyyaml
+pydantic
 
 # Stage 2: Computer Vision
-opencv-python-headless==4.8.1.78
-ultralytics==8.0.228
+opencv-python-headless
+ultralytics
